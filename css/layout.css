@@ -1,0 +1,27 @@
+body {
+  margin: 0 5%; /* 5% mellemrum i både venstre og højre side */
+}
+
+.category_list_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px); /* giver faste rækker */
+  gap: 20px;
+}
+
+.category_list_container div {
+  background-color: #888; /* grå baggrund */
+  color: white;
+  display: flex;
+  justify-content: flex-start; /* tekst til venstre */
+  align-items: center; /* stadig centreret vertikalt */
+  font-size: 1.2rem;
+  border-radius: 6px;
+  padding-left: 15px; /* lidt luft fra venstre kant */
+}
+
+@media (max-width: 600px) {
+  .category_list_container {
+    grid-template-columns: 1fr;
+  }
+}

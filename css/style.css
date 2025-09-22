@@ -28,6 +28,9 @@ h1 {
 
 .logo .red {
   color: red; /* laver R'et rødt */
+  display: inline-block; /* nødvendig for at transform virker */
+  transform: scaleX(-1); /* spejlvender vandret */
+  margin: 0 2px; /* giver lidt luft, så det ikke støder på de andre bogstaver */
 }
 
 .nav ul {

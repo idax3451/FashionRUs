@@ -1,5 +1,13 @@
 body {
-  margin: 0 5%; /* 5% mellemrum i både venstre og højre side */
+  margin: 0; /* nulstil margin */
+  font-family: Arial, sans-serif;
+}
+
+/* Containeren styrer bredden og flugter alt */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%; /* luft i siderne */
 }
 
 .category_list_container {
@@ -22,6 +30,34 @@ body {
 
 @media (max-width: 600px) {
   .category_list_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* _____Productlist siden______ */
+
+.product_list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* _________Product side__________ */
+/* Responsiv */
+@media (max-width: 900px) {
+  .product_page {
+    grid-template-columns: 1fr;
+  }
+
+  .product_buybox {
+    margin-top: 20px;
+  }
+}
+
+/* ______Mobil (max bredde 600px) → 1 kolonne_______*/
+@media (max-width: 600px) {
+  .product_list_container {
     grid-template-columns: 1fr;
   }
 }

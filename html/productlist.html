@@ -3,7 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Productlist</title>
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Fashion<span class="logo-r">R</span>Us</h1>
+        <nav>
+          <a href="#">Categories</a>
+          <a href="#">Brands</a>
+          <a href="#">Seasons</a>
+        </nav>
+      </header>
+
+      <h2>Nike</h2>
+
+      <div class="product_list_container">
+        <!-- Produktkort 1 -->
+        <a href="product.html" class="product_card">
+          <img src="../imgs/1163_sahara-roundneck.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+          <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
+          <p class="category">Tshirts | Nike</p>
+          <p class="price">DKK 1595,-</p>
+          <p class="readmore">Read More</p>
+        </a>
+
+        <!-- Produktkort 2 (med rabat) -->
+        <a href="product.html" class="product_card">
+          <img src="../imgs/1164_sahara-cricket.webp" alt="Blue T20 Indian Cricket Jersey" />
+          <h3>Blue T20 Indian Cricket Jersey</h3>
+          <p class="category">Tshirts | Nike</p>
+          <p class="price">
+            <span class="prev">Prev. DKK 1595,-</span><br />
+            <span class="now">Now DKK 1560,-</span>
+          </p>
+          <span class="discount">-34%</span>
+          <p class="readmore">Read More</p>
+        </a>
+
+        <!-- Produktkort 3 (udsolgt) -->
+        <a href="product.html" class="product_card soldout">
+          <img src="../imgs/1165_cardigan.webp" alt="Blue T20 Indian Cricket Jersey" />
+          <span class="soldout_label">Sold Out</span>
+          <h3>Blue T20 Indian Cricket Jersey</h3>
+          <p class="category">Tshirts | Nike</p>
+          <p class="price">DKK 1595,-</p>
+          <p class="readmore">Read More</p>
+        </a>
+
+        <!-- Produktkort 4 (udsolgt + rabat) -->
+        <a href="product.html" class="product_card soldout">
+          <img src="../imgs/1525_puma-bagpack.webp" alt="Puma Backpack" />
+          <span class="soldout_label">Sold Out</span>
+          <h3>Puma Backpack</h3>
+          <p class="category">Bags | Puma</p>
+          <p class="price">
+            <span class="prev">Prev. DKK 1595,-</span><br />
+            <span class="now">Now DKK 1560,-</span>
+          </p>
+          <span class="discount">-34%</span>
+          <p class="readmore">Read More</p>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>

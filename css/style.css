@@ -157,7 +157,7 @@ header h1 {
 }
 
 /* Produkt side layout */
-.product_page {
+#product_page {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* 3 kolonner */
   gap: 40px;

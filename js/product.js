@@ -5,11 +5,10 @@ const id = params.get("id");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
   .then((response) => response.json())
-  .then(product) => {
-//console.log(product.articletype);
+  .then((product) => {
+    //console.log(product.articletype);
 
-product_page.innerHTML = `
-<section>    
+    product_page.innerHTML = `  
 <!-- Venstre: Billede -->
         <div class="product_image">
           <img src="../imgs/1163_sahara-roundneck.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
@@ -42,6 +41,5 @@ product_page.innerHTML = `
 
           <button class="buy_button">Add to basket</button>
         </aside>
-        </section>
         `;
-});
+  });

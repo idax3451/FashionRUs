@@ -11,16 +11,17 @@ function showProduct(product) {
   product_page.innerHTML = `  
 <!-- Venstre: Billede -->
         <div class="product_image">
-          <img src="../imgs/1163_sahara-roundneck.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" />
         </div>
 
         <!-- Midt: Info -->
         <div class="product_info">
           <h2>Product Information</h2>
-          <p class="modelName"><strong>Brand name</strong><br/> ${product.brandname}</p>
+          <p class="brandName"><strong>Brand name</strong><br/> ${product.brandname}</p>
+          <p class="articleType"><span class="bold"> <strong>Type</strong><br/></span> ${product.articletype}</p>
           <p class="modelName"><strong>Model name</strong><br/> ${product.productdisplayname}</p>
           <p class="modelColor"><strong>Color</strong><br/>Blue ${product.colour1}</p>
-          <p class="articleType"><span class="bold"> <strong>Type</strong><br/></span> ${product.articletype}</p>
+          <p class="price"><strong>Price</strong><br/> DKK ${product.price}</p>
         </div>
 
         <!-- Højre: Køb-boks -->

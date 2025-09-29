@@ -33,7 +33,3 @@ function showProducts(products) {
         </article>`;
   });
 }
-
-//let markup = "";
-//products.forEach(product => {
-//  markup += `<article class="smallProduct ${product.discount && "onSale"} ${product.soldout && "soldOut"}">

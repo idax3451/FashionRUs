@@ -143,6 +143,7 @@ header h1 {
 
 /* Breadcrumb */
 .breadcrumb {
+  display: flex;
   font-size: 14px;
   margin: 15px 0;
 }

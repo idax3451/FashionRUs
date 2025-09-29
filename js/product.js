@@ -9,28 +9,30 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
     //console.log(product.articletype);
 
     product_page.innerHTML = `  
+
+    <nav class="breadcrumb"><a href="#">Home</a> > <a href="#">Brands</a> > <a href="#">${product.brandname}</a> > ${product.productdisplayname}</nav>
+    
 <!-- Venstre: Billede -->
         <div class="product_image">
-          <img src="../imgs/1163_sahara-roundneck.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" />
         </div>
 
         <!-- Midt: Info -->
         <div class="product_info">
           <h2>Product Information</h2>
-          <p class="modelName"><strong>Model name</strong><br />Sahara Team India Fanwear Round Neck Jersey ${product.productdisplayname}</p>
-          <p class="modelColor"><strong>Color</strong><br />Blue ${product.colour1}</p>
-          <p class="inventoryNumber"><strong>Inventory number</strong><br />1163 ${product.price}</p>
+          <p class="modelName"><strong>Model name</strong><br /> ${product.productdisplayname}</p>
+          <p class="modelColor"><strong>Color</strong><br /> ${product.basecolour}</p>
+         
 
-          <h3>Nike</h3>
-          <p>Nike, creating experiences for today’s athlete</p>
-          <p class="articleType"><span class="bold">Type:</span> ${product.articletype}</p>
+          <p><strong>Brand name</strong><br />${product.brandname}</p>
+          <p><i>${product.brandbio}</i></p>
+          <p>${product.description}</p>
         </div>
 
         <!-- Højre: Køb-boks -->
         <aside class="product_buybox">
-          <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
-          <p class="productCategory">Nike | Tshirts ${product.category}</p>
-
+          <h2>${product.productdisplayname}</h2>
+          <p class="productCategory">${product.articletype}</p>
           <label for="size">Choose a size</label>
           <select id="size" name="size">
             <option>S</option>
@@ -38,7 +40,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
             <option>L</option>
             <option>XL</option>
           </select>
-
+ <p class="inventoryNumber"><strong>Price</strong><br /> ${product.price}</p>
           <button class="buy_button">Add to basket</button>
         </aside>
         `;

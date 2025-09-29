@@ -22,7 +22,12 @@ function showProducts(products) {
           <p class="price">
             <span class= ${element.discount && "prev"}>DKK ${element.price}</span><br />
             
-            ${element.discount ? `<span class="now">Now DKK ${element.price}</span><span class="discount">-34%</span>` : ""}
+            ${
+              element.discount
+                ? `<span class="now">Now DKK ${Math.round(element.price - (element.price * element.discount) / 100)}</span>
+            <span class="discount">-${element.discount}%</span>`
+                : ""
+            }
           </p>
           <a class="readmore" href="product.html?id=${element.id}">Read More</a>
         </article>`;

@@ -1,4 +1,5 @@
 const product_page = document.querySelector("#product_page");
+const current = document.querySelector("#current");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -8,6 +9,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
   .then((data) => showProduct(data));
 
 function showProduct(product) {
+  current.textContent = product.productdisplayname;
   product_page.innerHTML = `  
 <!-- Venstre: Billede -->
         <div class="product_image">

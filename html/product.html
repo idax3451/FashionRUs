@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/product.js" defer></script>
-    <script src="../js/breadcrump.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -22,7 +21,10 @@
       </header>
 
       <!-- Breadcrumb -->
-      <nav class="breadcrumb"></nav>
+      <nav class="breadcrumb">
+        <a href="./#">Home</a> > <a href="./productlist.html?category=Accessories">Products</a> >
+        <span id="current"></span>
+      </nav>
 
       <!-- Produkt layout -->
       <main id="product_page"></main>

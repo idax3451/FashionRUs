@@ -16,7 +16,7 @@ function showProducts(products) {
     product_list_container.innerHTML += ` <!-- Produktkort 4 (udsolgt + rabat) -->
          <article class="product_card">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="product image" />
-          <span class="soldout_label">Sold Out</span>
+          ${element.soldout ? `<span class="soldout_label">Sold Out</span>` : ""}
           <h3>${element.productdisplayname}</h3>
           <p class="category">${element.articletype}</p>
           <p class="price">

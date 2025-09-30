@@ -44,6 +44,8 @@ function showProduct(product) {
 }
 
 /* hvis der er udsalg og eller udsolgt ??? Hvordan får jeg det sat ind på productsiden??
+
+
       <p class="price">
             <span class= ${element.discount && "prev"}>DKK ${element.price}</span><br />
             
@@ -57,9 +59,27 @@ function showProduct(product) {
           
 
 
-          productlistContainer.innerHTML +=
+          product_list_container.innerHTML +=
           <div class="product_info ${element.soldout && "soldOut"} ${element.discount && "onSale"}">
           
+Mine klasser hedder:
           class="discount"
           class="soldout_label"
           */
+
+/* <span> er en inline-container, bruges til at style en del af teksten.
+
+
+class=${element.discount && "prev"} betyder:
+Hvis der findes en element.discount (altså hvis produktet har en rabat), så får <span> klassen "prev".
+Hvis der ikke er en rabat, så får den ingen class.
+
+DKK ${element.price}:
+${element.price} betyder “sæt værdien af element.price ind her”.
+Hvis element.price = 200, så bliver det til DKK 200. 
+
+element.discount ? ... : ... betyder:
+Hvis der findes en discount (fx 20), så vis det første stykke HTML.
+Ellers (hvis der ikke er rabat), vis ingenting ("").
+
+*/

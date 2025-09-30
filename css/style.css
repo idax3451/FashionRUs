@@ -42,8 +42,9 @@ header h1 {
   font-size: 1rem;
 }
 
-.nav a:hover {
-  text-decoration: underline;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* ___________Productlist siden__________ */

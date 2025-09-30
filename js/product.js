@@ -42,3 +42,24 @@ function showProduct(product) {
         </aside>
         `;
 }
+
+/* hvis der er udsalg og eller udsolgt ??? Hvordan får jeg det sat ind på productsiden??
+      <p class="price">
+            <span class= ${element.discount && "prev"}>DKK ${element.price}</span><br />
+            
+            ${
+              element.discount
+                ? `<span class="now">Now DKK ${Math.round(element.price - (element.price * element.discount) / 100)}</span>
+            <span class="discount">-${element.discount}%</span>`
+                : ""
+            }
+          </p> 
+          
+
+
+          productlistContainer.innerHTML +=
+          <div class="product_info ${element.soldout && "soldOut"} ${element.discount && "onSale"}">
+          
+          class="discount"
+          class="soldout_label"
+          */

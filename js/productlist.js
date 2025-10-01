@@ -8,7 +8,14 @@ const header = (document.querySelector("h2").textContent = category);
 document.querySelectorAll("#filters button").forEach((knap) => knap.addEventListener("click", showFiltered));
 
 function showFiltered() {
-  console.log("showFiltered");
+  console.log(this.dataset.gender);
+  const gender = this.dataset.gender;
+  if (gender == "All") {
+    showProducts(allData);
+  } else {
+    const udsnit = allData.filter((product) => product.gender == gender);
+    showProducts(udsnit);
+  }
 }
 
 let allData;
@@ -22,6 +29,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
 
 function showProducts(products) {
   console.log(products);
+  product_list_container.innerHTML = ""; /* Så produkterne ikke kun står nederest i filtrering */
   products.forEach((element) => {
     console.log(element);
     product_list_container.innerHTML += ` <!-- Produktkort 4 (udsolgt + rabat) -->

@@ -13,17 +13,26 @@ function showProduct(product) {
   product_page.innerHTML = `  
 <!-- Venstre: Billede -->
         <div class="product_image">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" />
+          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" /> 
         </div>
 
         <!-- Midt: Info -->
         <div class="product_info">
           <h2>Product Information</h2>
+          ${product.soldout ? "<p>Sold out</p>" : ""}
           <p class="brandName"><strong>Brand name</strong><br/> ${product.brandname}</p>
           <p class="articleType"><span class="bold"> <strong>Type</strong><br/></span> ${product.articletype}</p>
           <p class="modelName"><strong>Model name</strong><br/> ${product.productdisplayname}</p>
           <p class="modelColor"><strong>Color</strong><br/>Blue ${product.colour1}</p>
-          <p class="price"><strong>Price</strong><br/> DKK ${product.price}</p>
+           <p class="price">
+            <span class= ${product.discount && "prev"}>DKK ${product.price}</span><br />
+            ${
+              product.discount
+                ? `<span class="now">Now DKK ${Math.round(product.price - (product.price * product.discount) / 100)}</span>
+            <span class="discount">-${product.discount}%</span>`
+                : ""
+            }
+          </p>
         </div>
 
         <!-- Højre: Køb-boks -->

@@ -45,21 +45,23 @@ fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
   });
 
 function showProducts(products) {
-  console.log(products);
-  product_list_container.innerHTML = ""; /* Så produkterne ikke kun står nederest i filtrering */
+  //Her laver du en funktion, der hedder showProducts. Den får en "pakke" med data ind, som hedder products (det er en liste med flere produkter).
+  console.log(products); //Her tjekker du i konsollen (inde i browserens udviklerværktøjer), hvad der ligger i den "pakke" af produkter. Det er mest for at se, om det hele virker.
+  product_list_container.innerHTML = ""; //Du sletter alt indholdet i boksen (containeren), hvor produkterne skal vises. Det gør du for, at der ikke bare bliver lagt nye produkter under de gamle.
   products.forEach((element) => {
+    //Du siger: "Gå igennem hver eneste ting (element) i listen af produkter". Altså: kig på ét produkt ad gangen.
     console.log(element);
-    product_list_container.innerHTML += ` <!-- Produktkort 4 (udsolgt + rabat) -->
+    product_list_container.innerHTML += ` <!-- Produktkort 4 (udsolgt + rabat) --> //Du tilføjer nyt HTML-indhold til din produktliste. Her begynder du at bygge en "produktboks" i HTML for hvert produkt.
          <article class="product_card">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="product image" />
-          ${element.soldout ? `<span class="soldout_label">Sold Out</span>` : ""}
+          ${element.soldout ? `<span class="soldout_label">Sold Out</span>` : ""} //Dette er en kort måde at sige "hvis… så…": Hvis produktet er udsolgt, vis teksten "Sold Out". Hvis ikke, så vis ingenting.
           <h3>${element.productdisplayname}</h3>
           <p class="category">${element.articletype}</p>
           <p class="price">
             <span class= ${element.discount && "prev"}>DKK ${element.price}</span><br />
             
             ${
-              element.discount
+              element.discount //Dette betyder: Hvis produktet har en rabat: Vis den nye pris (beregnet som original pris minus rabat). Vis også hvor mange procent rabat der er. Hvis ikke der er rabat: vis ingenting.
                 ? `<span class="now">Now DKK ${Math.round(element.price - (element.price * element.discount) / 100)}</span>
             <span class="discount">-${element.discount}%</span>`
                 : ""

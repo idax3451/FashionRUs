@@ -18,7 +18,7 @@ body {
 }
 
 .category_list_container div {
-  background-color: #888; /* grå baggrund */
+  background-color: lightgray; /* grå baggrund */
   color: white;
   display: flex;
   justify-content: flex-start; /* tekst til venstre */
@@ -43,10 +43,10 @@ body {
   margin-top: 20px;
 }
 
-/* _________Product side__________ */
+/* _________Product side (max bredde 600px) → 1 kolonne________ */
 /* Responsiv */
 @media (max-width: 900px) {
-  .product_page {
+  #product_page {
     grid-template-columns: 1fr;
   }
 
@@ -56,6 +56,7 @@ body {
 }
 
 /* ______Mobil (max bredde 600px) → 1 kolonne_______*/
+/* Responsiv */
 @media (max-width: 600px) {
   .product_list_container {
     grid-template-columns: 1fr;

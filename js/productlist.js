@@ -5,11 +5,11 @@ console.log(category);
 const product_list_container = document.querySelector("main");
 const header = (document.querySelector("h2").textContent = category);
 
-document.querySelectorAll("#filters button").forEach((knap) => knap.addEventListener("click", showFiltered));
+document.querySelector("#filters button").addEventListener("click", showFiltered);
 
-function showFiltered() {
-  console.log(this.dataset.gender);
-  const gender = this.dataset.gender;
+function showFiltered(event) {
+  console.log(event.dataset.gender);
+  const gender = event.dataset.gender;
   if (gender == "All") {
     showProducts(allData);
   } else {
@@ -19,6 +19,23 @@ function showFiltered() {
 }
 
 let allData;
+
+//sætter eventlistener på elementet der indeholder sortingsknapperne
+document.querySelector("#sorting").addEventListener("click", sortItems);
+
+//funktion der sorterer arrayet currentDataSet baseret på hvilken sorteringsknap der er trykket på
+function sortItems(event) {
+  const direction = event.target.dataset.direction;
+  if (direction == "lohi") {
+    //her sorteres arrayet ifth. egenskaben price fra lav til høj
+    allData.sort((firstItem, secondItem) => firstItem.price - secondItem.price);
+  } else {
+    //her sorteres arrayet ifth. egenskaben price fra høj til lav
+    allData.sort((firstItem, secondItem) => secondItem.price - firstItem.price);
+  }
+  showProducts(allData);
+  //showProducts kaldes med det sorterede array som argument
+}
 
 fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
   .then((response) => response.json())
